@@ -6,8 +6,12 @@ $(document).ready(function () {
   setBgImg(imageUrl);
 
   // citadel of the ricks background
+  // var citadelBgImg =
+  //   "https://vignette.wikia.nocookie.net/rickandmorty/images/8/85/Rick-and-morty-citadel-of-rick-750x411.jpg/revision/latest?cb=20160903134247";
+
   var citadelBgImg =
-    "https://vignette.wikia.nocookie.net/rickandmorty/images/8/85/Rick-and-morty-citadel-of-rick-750x411.jpg/revision/latest?cb=20160903134247";
+    "https://cdn-images-1.medium.com/max/1280/1*BArwiczvwUqxWu9OB1e7Sw.png";
+
   // world 3 = citadel and world 4 = world ender
   var worldArray = [3, 4];
 

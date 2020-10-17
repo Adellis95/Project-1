@@ -107,3 +107,48 @@ $(document).ready(function () {
     );
   }
 });
+
+// Ajax calls
+$("#character-card-1").click(function(){
+  console.log("card 1 clicked");
+  $.ajax({
+    url: "https://rickandmortyapi.com/api/location",
+    method: "GET",
+  }).then(function(response) {
+   console.log(response);
+   for(i = 0; i < response.data.length; i++){
+    console.log(response.data[i].images.fixed_width.url)
+  }
+   
+  });
+
+
+  $.ajax({
+    url: "https://cors-anywhere.herokuapp.com/https://badadvice.rest/api",
+    method: "GET",
+  }).then(function(response) {
+   console.log(response);
+   
+  });
+});
+$("#character-card-2").click(function(){
+  console.log("card 2 clicked");
+  $.ajax({
+    url: "https://cors-anywhere.herokuapp.com/https://badadvice.rest/api",
+    method: "GET",
+  }).then(function(response) {
+   console.log(response);
+   
+  });
+});
+$("#character-card-3").click(function(){
+  console.log("card 3 clicked");
+  $.ajax({
+    url: "https://cors-anywhere.herokuapp.com/https://badadvice.rest/api",
+    method: "GET",
+  }).then(function(response) {
+   console.log(response);
+   
+  });
+});
+

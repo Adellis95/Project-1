@@ -15,3 +15,56 @@
   font-weight: 600;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+
+/* card flip animation section */
+.card-flip > div {
+  backface-visibility: hidden;
+  transition: transform 300ms;
+  transition-timing-function: linear;
+  width: 240px;
+  height: 240px;
+  margin: 0;
+  display: flex;
+}
+
+#card-front-4,
+#card-front-3,
+#card-front-2,
+#card-front-1 {
+  transform: rotateY(0deg);
+}
+
+#card-back-4,
+#card-back-3,
+#card-back-2,
+#card-back-1 {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+}
+
+.card-flip:hover #card-front-1 {
+  transform: rotateY(-180deg);
+}
+.card-flip:hover #card-front-2 {
+  transform: rotateY(-180deg);
+}
+.card-flip:hover #card-front-3 {
+  transform: rotateY(-180deg);
+}
+.card-flip:hover #card-front-4 {
+  transform: rotateY(-180deg);
+}
+
+.card-flip:hover #card-back-1 {
+  transform: rotateY(0deg);
+}
+.card-flip:hover #card-back-2 {
+  transform: rotateY(0deg);
+}
+.card-flip:hover #card-back-3 {
+  transform: rotateY(0deg);
+}
+.card-flip:hover #card-back-4 {
+  transform: rotateY(0deg);
+}

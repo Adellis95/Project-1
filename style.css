@@ -1,3 +1,4 @@
+
 /* .body{
     background-image: url(https://i.pinimg.com/originals/e2/97/8c/e2978ca3d3a608d8f3e3dac5c083f3cb.jpg);
     background-size: cover;
@@ -13,5 +14,11 @@
     .instructions{
          font-size: large;
          font-weight: bold;
+<<<<<<< HEAD
          font-family: 'DM Sans', sans-serif;
      }
+=======
+         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     }
+
+>>>>>>> cc6cb6b10de3e8f2f6d11879e27a47c5141f6551

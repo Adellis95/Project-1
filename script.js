@@ -1,29 +1,30 @@
 $(document).ready(function () {
-  var imageUrl =
-    "https://i.pinimg.com/originals/e2/97/8c/e2978ca3d3a608d8f3e3dac5c083f3cb.jpg";
-  var citadelBgImg =
-    "https://cdn-images-1.medium.com/max/1280/1*BArwiczvwUqxWu9OB1e7Sw.png";
 
-  setBgImg(imageUrl);
-
-  // hides next world navigation button
-  $("#btn-next-world").hide();
-
-  $("#start-adventure").click(function () {
-    setBgImg(citadelBgImg);
-    clearHomePageText();
-    addCards();
-    addCards1();
-    addCards3();
-
-    // default thumbnail sizing
-    $(".img-thumbnail").css("width", "100%");
-    $(".img-thumbnail").css("height", "100%");
-
-    $("#start-adventure").hide();
-    $("#btn-next-world").show();
-  });
-
+    var imageUrl =
+      "https://i.pinimg.com/originals/e2/97/8c/e2978ca3d3a608d8f3e3dac5c083f3cb.jpg";
+    var citadelBgImg =
+      "https://cdn-images-1.medium.com/max/1280/1*BArwiczvwUqxWu9OB1e7Sw.png";
+  
+    setBgImg(imageUrl);
+  
+    // hides next world navigation button
+    $("#btn-next-world").hide();
+  
+    $("#start-adventure").click(function () {
+      setBgImg(citadelBgImg);
+      clearHomePageText();
+      addCards();
+      addCards1();
+      addCards3();
+  
+      // default thumbnail sizing
+      $(".img-thumbnail").css("width", "100%");
+      $(".img-thumbnail").css("height", "100%");
+  
+      $("#start-adventure").hide();
+      $("#btn-next-world").show();
+    });
+  
   //   fixed footer styling
 
   $(".footer").css("position", "fixed");

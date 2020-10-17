@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     var imageUrl =
       "https://i.pinimg.com/originals/e2/97/8c/e2978ca3d3a608d8f3e3dac5c083f3cb.jpg";
     var citadelBgImg =
@@ -108,3 +109,4 @@ $(document).ready(function () {
     }
   });
   
+ 

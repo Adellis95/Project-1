@@ -2,7 +2,8 @@ body{
     background-image: url(https://i.pinimg.com/originals/e2/97/8c/e2978ca3d3a608d8f3e3dac5c083f3cb.jpg);
     background-size: cover;
     background-attachment: fixed;
-    }  .content {
+    }  
+    .content {
     width: 50%;
     padding: 40px;
     margin: 100px auto;

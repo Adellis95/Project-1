@@ -3,9 +3,7 @@ $(document).ready(function () {
     "https://i.pinimg.com/originals/e2/97/8c/e2978ca3d3a608d8f3e3dac5c083f3cb.jpg";
   var citadelBgImg =
     "https://cdn-images-1.medium.com/max/1280/1*BArwiczvwUqxWu9OB1e7Sw.png";
-  let badAdviceURL = 
-    "https://cors-anywhere.herokuapp.com/https://badadvice.rest/api";  
-
+  
   setBgImg(imageUrl);
 
   
@@ -16,8 +14,8 @@ $(document).ready(function () {
   $("#start-adventure").click(function () {
     setBgImg(citadelBgImg);
     clearHomePageText();
-
-getCitidelOfRickChar();
+    getBadAdvice();
+    getCitidelOfRickChar();
 
     // default thumbnail sizing
     $(".img-thumbnail").css("width", "100%");
@@ -29,7 +27,7 @@ getCitidelOfRickChar();
 
   function getCitidelOfRickChar(){
         let randomArr = []
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 4; i++){
             randomArr.push(Math.floor(Math.random() * 591))
         }
         $.ajax({
@@ -47,7 +45,7 @@ getCitidelOfRickChar();
               $("#card-back-" + [i + 1]).addClass("card");
               $("#card-front-" +[i + 1]).attr("style", "height: 15rem;");
               $("#card-back-" + [i + 1]).attr("style", "height: 15rem;");
-              $("#card-back-" + [i + 1]).text("Bad Advice");
+              $("#card-back-" + [i + 1]).attr("style", "font-family: 'Pacifico', cursive;");
               $("#card-front-" +[i + 1]).append(cardImgEl);
               $("#card-front-" +[i + 1]).append(
                   "<div class='card-block'><h5 class='card-title'>" + response[i].name + "</h5></div>"
@@ -56,6 +54,24 @@ getCitidelOfRickChar();
   });
 
 }
+
+  // grabs 4 random advice
+  function getBadAdvice(){
+    let randomAdviceArr = []
+    for (let i = 0; i < 4; i++){
+      randomAdviceArr.push(Math.floor(Math.random() * 200))
+  console.log(randomAdviceArr[i])
+    $.ajax({
+        url: "https://api.adviceslip.com/advice/" + randomAdviceArr[i],
+        method: "GET"
+      }).then(function(response){
+        // need to target advice response only
+          $("#card-back-" + [i + 1]).text(response);
+        
+      });
+  }
+} 
+
   //   fixed footer styling
 
   $(".footer").css("position", "fixed");
@@ -85,52 +101,3 @@ getCitidelOfRickChar();
   }
 
 });
-
-// Ajax calls
-
-
-$("#card-front-1").hover(function(){
-  console.log("card 1 flipped");
-  $.ajax({
-    url: "https://rickandmortyapi.com/api/location/3",
-    method: "GET",
-  }).then(function(response) {
-    let random = Math.floor(Math.random() * response.residents.length);
-    let characterInfoURL = response.residents[random];
-    $.ajax({
-      url: characterInfoURL,
-      method: "GET"
-    }).then(function(response){
-      return response.image
-    });
-    });
-  });
-
-//   $.ajax({
-//     url: badAdviceURL,
-//     method: "GET",
-//   }).then(function(response) {
-//   let random = Math.floor(Math.random() * response.length);
-//    $("#character-card-1").append(response[random]);
-//   });
-// });
-// $("#card-back-2").hover(function(){
-//   console.log("card 2 clicked");
-//   $.ajax({
-//     url: badAdviceURL,
-//     method: "GET",
-//   }).then(function(response) {
-//     let random = Math.floor(Math.random() * response.length);
-//    $("#card-back-2").append(response[random]);
-//   });
-// });
-// $("#card-back-3").hover(function(){
-//   console.log("card 3 clicked");
-//   $.ajax({
-//     url: badAdviceURL,
-//     method: "GET",
-//   }).then(function(response) {
-//     let random = Math.floor(Math.random() * response.length);
-//     $("#character-card-3").text(response[random]);
-//   });
-// });

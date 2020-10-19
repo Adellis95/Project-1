@@ -31,7 +31,7 @@ $(document).ready(function () {
   $("#character-cards-group").hide();
 
   $("#start-adventure").click(function () {
-    myManAudio.play();
+    // myManAudio.play();
     // evilMortyAudio.play();
     setBgImg(citadelBgImg);
     clearHomePageText();
@@ -48,7 +48,7 @@ $(document).ready(function () {
   });
   // changes background image, cards, refreshes site if button is clicked more than 4 times
   $("#btn-next-world").click(function () {
-    myManAudio.play();
+    // myManAudio.play();
     // evilMortyAudio.play();
     clickCount = +clickCount + 1;
     if (clickCount > 4) {
@@ -95,20 +95,18 @@ $(document).ready(function () {
   // grabs 4 random advice
   function getBadAdvice() {
     $.ajax({
-      url: "https://api.adviceslip.com/advice/search/a",
-      method: "GET",
-    }).then(function (response) {
-      // sets random advice to cards
-      for (let i = 0; i < 4; i++) {
-        $("#card-back-" + [i + 1]).text(
-          JSON.parse(response).slips[Math.floor(Math.random() * 195)].advice
-        );
-      }
-    });
-  }
-
+        url: "https://cors-anywhere.herokuapp.com/https://badadvice.rest/api/count=29",
+        method: "GET",
+      }).then(function(response){
+        // sets random advice to cards
+        console.log(response[0]);
+        for (let i = 0; i < 4; i++){
+          $("#card-back-" + [i + 1]).text(response[i]);
+        }
+      });
+} 
+  
   //   fixed footer styling
-
   $(".footer").css("position", "fixed");
   $(".footer").css("left", "0");
   $(".footer").css("bottom", "0");

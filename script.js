@@ -3,8 +3,12 @@ $(document).ready(function () {
     "https://i.pinimg.com/originals/e2/97/8c/e2978ca3d3a608d8f3e3dac5c083f3cb.jpg";
   var citadelBgImg =
     "https://cdn-images-1.medium.com/max/1280/1*BArwiczvwUqxWu9OB1e7Sw.png";
+  let badAdviceURL = 
+    "https://cors-anywhere.herokuapp.com/https://badadvice.rest/api";  
 
   setBgImg(imageUrl);
+
+  
 
   // hides next world navigation button
   $("#btn-next-world").hide();
@@ -12,10 +16,8 @@ $(document).ready(function () {
   $("#start-adventure").click(function () {
     setBgImg(citadelBgImg);
     clearHomePageText();
-    addCards();
-    addCards1();
-    addCards3();
-    addCards4();
+
+getCitidelOfRickChar();
 
     // default thumbnail sizing
     $(".img-thumbnail").css("width", "100%");
@@ -25,6 +27,35 @@ $(document).ready(function () {
     $("#btn-next-world").show();
   });
 
+  function getCitidelOfRickChar(){
+        let randomArr = []
+        for (let i = 0; i < 4; i++) {
+            randomArr.push(Math.floor(Math.random() * 591))
+        }
+        $.ajax({
+            url: "https://rickandmortyapi.com/api/character/" + randomArr,
+            method: "GET"
+          }).then(function(response){
+            for (let i = 0; i < 4; i++) {
+                var cardImgEl = $("<img>");
+              cardImgEl.addClass("card-img-top mx-auto img-thumbnail");
+              cardImgEl.attr(
+                  "src",
+                  response[i].image
+              );
+              $("#card-front-" +[i + 1]).addClass("card");
+              $("#card-back-" + [i + 1]).addClass("card");
+              $("#card-front-" +[i + 1]).attr("style", "height: 15rem;");
+              $("#card-back-" + [i + 1]).attr("style", "height: 15rem;");
+              $("#card-back-" + [i + 1]).text("Bad Advice");
+              $("#card-front-" +[i + 1]).append(cardImgEl);
+              $("#card-front-" +[i + 1]).append(
+                  "<div class='card-block'><h5 class='card-title'>" + response[i].name + "</h5></div>"
+              );
+          }
+  });
+
+}
   //   fixed footer styling
 
   $(".footer").css("position", "fixed");
@@ -53,127 +84,53 @@ $(document).ready(function () {
     $("#game-instructions").empty();
   }
 
-  function addCards() {
-    var cardImgEl = $("<img>");
-
-    cardImgEl.addClass("card-img-top mx-auto img-thumbnail");
-    cardImgEl.attr(
-      "src",
-      "https://rickandmortyapi.com/api/character/avatar/274.jpeg"
-    );
-    // cardImgEl.attr("width", "100px");
-    // cardImgEl.attr("height", "150px");
-    $("#card-front-1").addClass("card");
-    $("#card-back-1").addClass("card");
-    $("#card-front-1").attr("style", "height: 15rem;");
-    $("#card-back-1").attr("style", "height: 15rem;");
-    $("#card-back-1").text("Bad Advice");
-    $("#card-front-1").append(cardImgEl);
-    $("#card-front-1").append(
-      "<div class='card-block'><h5 class='card-title'>Some Rick</h5></div>"
-    );
-  }
-
-  //   https://rickandmortyapi.com/api/character/avatar/119.jpeg
-  function addCards1() {
-    var cardImgEl = $("<img>");
-
-    cardImgEl.addClass("card-img-top mx-auto img-thumbnail");
-    cardImgEl.attr(
-      "src",
-      "https://rickandmortyapi.com/api/character/avatar/267.jpeg"
-    );
-    // cardImgEl.attr("width", "100px");
-    // cardImgEl.attr("height", "150px");
-    $("#card-front-2").addClass("card");
-    $("#card-back-2").addClass("card");
-    $("#card-front-2").attr("style", "height: 15rem;");
-    $("#card-back-2").attr("style", "height: 15rem;");
-    $("#card-back-2").text("Bad Advice");
-    $("#card-front-2").append(cardImgEl);
-    $("#card-front-2").append(
-      "<div class='card-block'><h5 class='card-title'>Some Rick</h5></div>"
-    );
-  }
-
-  function addCards3() {
-    var cardImgEl = $("<img>");
-
-    cardImgEl.addClass("card-img-top mx-auto img-thumbnail");
-    cardImgEl.attr(
-      "src",
-      "https://rickandmortyapi.com/api/character/avatar/119.jpeg"
-    );
-    // cardImgEl.attr("width", "5rem");
-    // cardImgEl.attr("height", "10px");
-    $("#card-front-3").addClass("card");
-    $("#card-back-3").addClass("card");
-    $("#card-front-3").attr("style", "height: 15rem;");
-    $("#card-back-3").attr("style", "height: 15rem;");
-    $("#card-back-3").text("Bad Advice");
-    $("#card-front-3").append(cardImgEl);
-    $("#card-front-3").append(
-      "<div class='card-block'><h5 class='card-title'>Some Rick</h5></div>"
-    );
-  }
-
-  function addCards4() {
-    var cardImgEl = $("<img>");
-
-    cardImgEl.addClass("card-img-top mx-auto img-thumbnail");
-    cardImgEl.attr(
-      "src",
-      "https://rickandmortyapi.com/api/character/avatar/119.jpeg"
-    );
-    // cardImgEl.attr("width", "5rem");
-    // cardImgEl.attr("height", "10px");
-    $("#card-front-4").addClass("card");
-    $("#card-back-4").addClass("card");
-    $("#card-front-4").attr("style", "height: 15rem;");
-    $("#card-back-4").attr("style", "height: 15rem;");
-    $("#card-back-4").text("Bad Advice");
-    $("#card-front-4").append(cardImgEl);
-    $("#card-front-4").append(
-      "<div class='card-block'><h5 class='card-title'>Some Rick</h5></div>"
-    );
-  }
 });
 
 // Ajax calls
-$("#character-card-1").click(function () {
-  console.log("card 1 clicked");
+
+
+$("#card-front-1").hover(function(){
+  console.log("card 1 flipped");
   $.ajax({
-    url: "https://rickandmortyapi.com/api/location",
+    url: "https://rickandmortyapi.com/api/location/3",
     method: "GET",
-  }).then(function (response) {
-    console.log(response);
-    for (i = 0; i < response.data.length; i++) {
-      console.log(response.data[i].images.fixed_width.url);
-    }
+  }).then(function(response) {
+    let random = Math.floor(Math.random() * response.residents.length);
+    let characterInfoURL = response.residents[random];
+    $.ajax({
+      url: characterInfoURL,
+      method: "GET"
+    }).then(function(response){
+      return response.image
+    });
+    });
   });
 
-  $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/https://badadvice.rest/api",
-    method: "GET",
-  }).then(function (response) {
-    console.log(response);
-  });
-});
-$("#character-card-2").click(function () {
-  console.log("card 2 clicked");
-  $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/https://badadvice.rest/api",
-    method: "GET",
-  }).then(function (response) {
-    console.log(response);
-  });
-});
-$("#character-card-3").click(function () {
-  console.log("card 3 clicked");
-  $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/https://badadvice.rest/api",
-    method: "GET",
-  }).then(function (response) {
-    console.log(response);
-  });
-});
+//   $.ajax({
+//     url: badAdviceURL,
+//     method: "GET",
+//   }).then(function(response) {
+//   let random = Math.floor(Math.random() * response.length);
+//    $("#character-card-1").append(response[random]);
+//   });
+// });
+// $("#card-back-2").hover(function(){
+//   console.log("card 2 clicked");
+//   $.ajax({
+//     url: badAdviceURL,
+//     method: "GET",
+//   }).then(function(response) {
+//     let random = Math.floor(Math.random() * response.length);
+//    $("#card-back-2").append(response[random]);
+//   });
+// });
+// $("#card-back-3").hover(function(){
+//   console.log("card 3 clicked");
+//   $.ajax({
+//     url: badAdviceURL,
+//     method: "GET",
+//   }).then(function(response) {
+//     let random = Math.floor(Math.random() * response.length);
+//     $("#character-card-3").text(response[random]);
+//   });
+// });

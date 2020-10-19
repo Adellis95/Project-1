@@ -10,13 +10,14 @@ $(document).ready(function () {
     "https://cdn-images-1.medium.com/max/1280/1*BArwiczvwUqxWu9OB1e7Sw.png";
   var imageArr = [
     "https://c4.wallpaperflare.com/wallpaper/588/5/300/rick-and-morty-toilets-hd-wallpaper-thumb.jpg",
+  
+    "https://wallpapercave.com/wp/wp1822736.jpg",
 
-    "https://static0.srcdn.com/wordpress/wp-content/uploads/2020/03/pjimage-46.jpg?q=50&fit=crop&w=740&h=370",
+    "https://images6.alphacoders.com/633/thumb-1920-633294.png",
 
-    "https://vignette.wikia.nocookie.net/rickandmorty/images/7/74/S4e5_2019-12-29-14h10m35s619.png/revision/latest?cb=20191229202517",
-
-    "https://filmdaily.co/wp-content/uploads/2018/06/rick-and-morty-pluto-1024x475.jpg",
+    "https://filmdaily.co/wp-content/uploads/2018/06/rick-and-morty-pluto-1024x475.jpg", "https://images6.alphacoders.com/909/thumb-1920-909641.png",
   ];
+
   var myManAudio = new Audio("my-man.mp3");
   var evilMortyAudio = new Audio(
     "rick-and-morty-soundtrack-evil-mortys-theme-qua.mp3"
@@ -31,6 +32,7 @@ $(document).ready(function () {
   $("#character-cards-group").hide();
 
   $("#start-adventure").click(function () {
+    
     // myManAudio.play();
     // evilMortyAudio.play();
     setBgImg(citadelBgImg);
@@ -48,10 +50,12 @@ $(document).ready(function () {
   });
   // changes background image, cards, refreshes site if button is clicked more than 4 times
   $("#btn-next-world").click(function () {
-    // myManAudio.play();
+
+    // `myManAudio.play();`
     // evilMortyAudio.play();
-    clickCount = +clickCount + 1;
-    if (clickCount > 4) {
+    clickCount =+ clickCount + 1;
+    if (clickCount > 5){
+
       location.reload();
     }
 

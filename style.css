@@ -9,6 +9,12 @@
     margin: 100px auto;
     
     }   */
+    /* #start-adventure {
+      width: 200px;
+      height: 190px;
+      position: absolute;
+      background: url(/media/images/transparent_button_normal.png.pagespeed.ce._PQuVSQuHh.png) no-repeat;
+  } */
 
 .instructions {
   font-size: large;
@@ -41,6 +47,7 @@
   transform: rotateY(180deg);
   position: absolute;
   top: 0;
+  font-size: 20px;
 }
 
 .card-flip:hover #card-front-1 {

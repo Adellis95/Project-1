@@ -1,7 +1,11 @@
 $(document).ready(function () {
+  // var sunnyAudio = new Audio('screaming-sun-rick-and-morty.mp3');
+  // sunnyAudio.play();
   var clickCount = 0;
   var imageUrl =
     "https://i.pinimg.com/originals/e2/97/8c/e2978ca3d3a608d8f3e3dac5c083f3cb.jpg";
+  var portalGifImg = 
+    "https://realtimevfx.com/uploads/default/original/2X/9/9ec795306ce4c382f785537845c3c798aba60d07.gif";
   var citadelBgImg =
     "https://cdn-images-1.medium.com/max/1280/1*BArwiczvwUqxWu9OB1e7Sw.png";
   var imageArr = [
@@ -13,15 +17,18 @@ $(document).ready(function () {
 
     "https://filmdaily.co/wp-content/uploads/2018/06/rick-and-morty-pluto-1024x475.jpg",
   ];
-  
+  var myManAudio = new Audio('my-man.mp3');
+  var evilMortyAudio = new Audio('rick-and-morty-soundtrack-evil-mortys-theme-qua.mp3');
+
     setBgImg(imageUrl);
-
-  
-
+    
   // hides next world navigation button
   $("#btn-next-world").hide();
 
   $("#start-adventure").click(function () {
+    
+    myManAudio.play();
+    // evilMortyAudio.play();
     setBgImg(citadelBgImg);
     clearHomePageText();
     getBadAdvice();
@@ -34,8 +41,10 @@ $(document).ready(function () {
     $("#start-adventure").hide();
     $("#btn-next-world").show();
   });
-
+// changes background image, cards, refreshes site if button is clicked more than 4 times
   $("#btn-next-world").click(function () {
+    myManAudio.play();
+    // evilMortyAudio.play();
     clickCount =+ clickCount + 1;
     if (clickCount > 4){
       location.reload();
@@ -67,7 +76,7 @@ $(document).ready(function () {
               $("#card-back-" + [i + 1]).addClass("card");
               $("#card-front-" +[i + 1]).attr("style", "height: 15rem;");
               $("#card-back-" + [i + 1]).attr("style", "height: 15rem;");
-              $("#card-back-" + [i + 1]).attr("style", "font-family: 'Pacifico', cursive;");
+              $("#card-back-" + [i + 1]).attr("style", "font-family: MuseoModerno, cursive;");
               $("#card-front-" +[i + 1]).append(cardImgEl);
               $("#card-front-" +[i + 1]).append(
                   "<div class='card-block'><h5 class='card-title'>" + response[i].name + "</h5></div>"
@@ -83,7 +92,7 @@ $(document).ready(function () {
         url: "https://api.adviceslip.com/advice/search/a",
         method: "GET",
       }).then(function(response){
-        // need to target advice response only
+        // sets random advice to cards
         for (let i = 0; i < 4; i++){
           $("#card-back-" + [i + 1]).text(JSON.parse(response).slips[Math.floor(Math.random() * 195)].advice);
         }
@@ -98,6 +107,13 @@ $(document).ready(function () {
   $(".footer").css("bottom", "0");
   $(".footer").css("width", "100%");
   $(".footer").css("height", "10vh");
+
+  function setPortalGif(URL){
+    $("#background-gif").css("background-image", "url(" + URL + ")");
+    $("#background-gif").css("background-size", "100% 50%");
+    $("#background-gif").css("background-attachment", "fixed"); 
+    $("#background-gif").css("height", "50vh");
+  }
 
   function setBgImg(URL) {
     $(".jumbotron").css("background-image", "url(" + URL + ")");

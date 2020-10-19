@@ -17,8 +17,8 @@ $(document).ready(function () {
 
     "https://filmdaily.co/wp-content/uploads/2018/06/rick-and-morty-pluto-1024x475.jpg",
   ];
-  var myManAudio = new Audio('my-man.mp3');
-  var evilMortyAudio = new Audio('rick-and-morty-soundtrack-evil-mortys-theme-qua.mp3');
+  // var myManAudio = new Audio('my-man.mp3');
+  // var evilMortyAudio = new Audio('rick-and-morty-soundtrack-evil-mortys-theme-qua.mp3');
 
     setBgImg(imageUrl);
     
@@ -27,7 +27,7 @@ $(document).ready(function () {
 
   $("#start-adventure").click(function () {
     
-    myManAudio.play();
+    // myManAudio.play();
     // evilMortyAudio.play();
     setBgImg(citadelBgImg);
     clearHomePageText();
@@ -43,7 +43,7 @@ $(document).ready(function () {
   });
 // changes background image, cards, refreshes site if button is clicked more than 4 times
   $("#btn-next-world").click(function () {
-    myManAudio.play();
+    // `myManAudio.play();`
     // evilMortyAudio.play();
     clickCount =+ clickCount + 1;
     if (clickCount > 4){

@@ -1,10 +1,20 @@
 $(document).ready(function () {
+  var clickCount = 0;
   var imageUrl =
     "https://i.pinimg.com/originals/e2/97/8c/e2978ca3d3a608d8f3e3dac5c083f3cb.jpg";
   var citadelBgImg =
     "https://cdn-images-1.medium.com/max/1280/1*BArwiczvwUqxWu9OB1e7Sw.png";
+  var imageArr = [
+    "https://c4.wallpaperflare.com/wallpaper/588/5/300/rick-and-morty-toilets-hd-wallpaper-thumb.jpg",
   
-  setBgImg(imageUrl);
+    "https://static0.srcdn.com/wordpress/wp-content/uploads/2020/03/pjimage-46.jpg?q=50&fit=crop&w=740&h=370",
+
+    "https://vignette.wikia.nocookie.net/rickandmorty/images/7/74/S4e5_2019-12-29-14h10m35s619.png/revision/latest?cb=20191229202517",
+
+    "https://filmdaily.co/wp-content/uploads/2018/06/rick-and-morty-pluto-1024x475.jpg",
+  ];
+  
+    setBgImg(imageUrl);
 
   
 
@@ -15,7 +25,7 @@ $(document).ready(function () {
     setBgImg(citadelBgImg);
     clearHomePageText();
     getBadAdvice();
-    getCitidelOfRickChar();
+    getRickAndMortyChar();
 
     // default thumbnail sizing
     $(".img-thumbnail").css("width", "100%");
@@ -25,7 +35,19 @@ $(document).ready(function () {
     $("#btn-next-world").show();
   });
 
-  function getCitidelOfRickChar(){
+  $("#btn-next-world").click(function () {
+    clickCount =+ clickCount + 1;
+    if (clickCount > 4){
+      location.reload();
+    }
+    clearCards();
+    setBgImg(imageArr[clickCount -1]);
+    getBadAdvice();
+    getRickAndMortyChar();
+
+  });
+
+  function getRickAndMortyChar(){
         let randomArr = []
         for (let i = 0; i < 4; i++){
             randomArr.push(Math.floor(Math.random() * 591))
@@ -57,19 +79,16 @@ $(document).ready(function () {
 
   // grabs 4 random advice
   function getBadAdvice(){
-    let randomAdviceArr = []
-    for (let i = 0; i < 4; i++){
-      randomAdviceArr.push(Math.floor(Math.random() * 200))
-  console.log(randomAdviceArr[i])
     $.ajax({
-        url: "https://api.adviceslip.com/advice/" + randomAdviceArr[i],
-        method: "GET"
+        url: "https://api.adviceslip.com/advice/search/a",
+        method: "GET",
       }).then(function(response){
         // need to target advice response only
-          $("#card-back-" + [i + 1]).text(response);
-        
+        for (let i = 0; i < 4; i++){
+          $("#card-back-" + [i + 1]).text(JSON.parse(response).slips[Math.floor(Math.random() * 195)].advice);
+        }
       });
-  }
+  
 } 
 
   //   fixed footer styling
@@ -91,7 +110,12 @@ $(document).ready(function () {
     // $("content").css("padding", "40px");
     // $("content").css("margin", "100px auto");
   }
-
+  function clearCards(){
+    for (i = 0; i < 4; i++) {
+      $("#card-front-" +[i + 1]).empty();
+      $("#card-back-" +[i + 1]).empty();
+    }
+  }
   function clearHomePageText() {
     $("#jumbotron-text").empty();
     $("#blockquote-main").empty();
@@ -101,3 +125,4 @@ $(document).ready(function () {
   }
 
 });
+

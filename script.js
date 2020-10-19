@@ -19,21 +19,16 @@ $(document).ready(function () {
   ];
   var myManAudio = new Audio('my-man.mp3');
   var evilMortyAudio = new Audio('rick-and-morty-soundtrack-evil-mortys-theme-qua.mp3');
-  // var trackLength = 5000 // 5 seconds for instance
-  // var playthroughs = 3 //play through the file 3 times
+
     setBgImg(imageUrl);
-    setPortalGif(portalGifImg);
     
-
-  
-
   // hides next world navigation button
   $("#btn-next-world").hide();
 
   $("#start-adventure").click(function () {
     
     myManAudio.play();
-    evilMortyAudio.play();
+    // evilMortyAudio.play();
     setBgImg(citadelBgImg);
     clearHomePageText();
     getBadAdvice();
@@ -49,7 +44,7 @@ $(document).ready(function () {
 // changes background image, cards, refreshes site if button is clicked more than 4 times
   $("#btn-next-world").click(function () {
     myManAudio.play();
-    evilMortyAudio.play();
+    // evilMortyAudio.play();
     clickCount =+ clickCount + 1;
     if (clickCount > 4){
       location.reload();

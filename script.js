@@ -4,10 +4,11 @@ $(document).ready(function () {
   var clickCount = 0;
   var imageUrl =
     "https://i.pinimg.com/originals/e2/97/8c/e2978ca3d3a608d8f3e3dac5c083f3cb.jpg";
-  var portalGifImg =
-    "https://realtimevfx.com/uploads/default/original/2X/9/9ec795306ce4c382f785537845c3c798aba60d07.gif";
   var citadelBgImg =
     "https://cdn-images-1.medium.com/max/1280/1*BArwiczvwUqxWu9OB1e7Sw.png";
+  var endPageImg =
+    "https://imgix.bustle.com/inverse/ab/5a/e8/e9/8a19/45d7/899b/75356b021017/the-quest-for-szechuan-sauce-has-never-looked-so-sweet.gif";
+    // "https://i.kinja-img.com/gawker-media/image/upload/t_original/vx7nhukveyirfjyzyibn.png";
   var imageArr = [
     "https://c4.wallpaperflare.com/wallpaper/588/5/300/rick-and-morty-toilets-hd-wallpaper-thumb.jpg",
 
@@ -48,19 +49,36 @@ $(document).ready(function () {
     $("#btn-next-world").show();
     $("#character-cards-group").show();
   });
-  // changes background image, cards, refreshes site if button is clicked more than 4 times
+
+  // changes background image, cards
   $("#btn-next-world").click(function () {
-    // `myManAudio.play();`
     // evilMortyAudio.play();
     clickCount = +clickCount + 1;
-    if (clickCount > 5) {
-      location.reload();
-    }
 
     clearCards();
     setBgImg(imageArr[clickCount - 1]);
     getBadAdvice();
     getRickAndMortyChar();
+
+    if (clickCount == 6){
+      evilMortyAudio.play();
+      $("#character-cards-group").hide();
+      $("#btn-next-world").text("Restart Adventure!");
+      setBgImg(endPageImg);
+      $("#game-instructions").append(
+        "<p><b>Rick Sanchez :</b> Because that's what this is all about, Morty.<br>"+
+        "<b>Morty Smith :</b> Szechuan?<br>"+
+        "<b>Rick Sanchez :</b> That's my one-armed man! I'm not driven by avenging my dead family, Morty! That was fake. I-I-I'm driven by finding that McNugget sauce.<br>"+
+        "<b>Morty Smith :</b> McNuggets?<br>"+
+        "<b>Rick Sanchez :</b> I want that Mulan McNugget sauce, Morty! That's my series arc, Morty.<br>"+
+        "<b>Morty Smith :</b> What the hell?<br>"+
+        "<b>Rick Sanchez :</b> If it takes nine seasons, I want my McNugget dipping sauce, Szechuan sauce, Morty.<br>"+
+        "<b>Morty Smith :</b> What are you talking about, Rick?<br>"+
+        "<b>Rick Sanchez :</b> That's what's gonna take us all the way to the end, Morty. Season - Nine more seasons, Morty. Nine more seasons until I get that dipping Szechuan sauce. What is that? For 97 more years, Morty! I want that McNugget sauce, Morty.</p>"
+      );
+    } else if (clickCount == 7) {
+      location.reload();
+    }
   });
 
   function getRickAndMortyChar() {
@@ -117,13 +135,6 @@ $(document).ready(function () {
   $(".footer").css("bottom", "0");
   $(".footer").css("width", "100%");
   $(".footer").css("height", "10vh");
-
-  function setPortalGif(URL) {
-    $("#background-gif").css("background-image", "url(" + URL + ")");
-    $("#background-gif").css("background-size", "100% 50%");
-    $("#background-gif").css("background-attachment", "fixed");
-    $("#background-gif").css("height", "50vh");
-  }
 
   function setBgImg(URL) {
     $(".jumbotron").css("background-image", "url(" + URL + ")");

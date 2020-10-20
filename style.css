@@ -15,6 +15,27 @@
       position: absolute;
       background: url(/media/images/transparent_button_normal.png.pagespeed.ce._PQuVSQuHh.png) no-repeat;
   } */
+#btm-right-gif{
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 125px;
+  width: 125px;
+  border: 3px solid #73AD21;
+  background-image: url("https://media.tenor.com/images/8e16688229234eaa5ed33f99622034c5/tenor.gif");
+}
+
+#btm-left-gif{
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 125px;
+  width: 125px;
+  border: 3px solid #73AD21;
+  background-image: url("https://media.tenor.com/images/8e16688229234eaa5ed33f99622034c5/tenor.gif");
+}
 
 .instructions {
   font-size: large;

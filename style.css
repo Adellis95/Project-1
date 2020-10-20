@@ -1,4 +1,3 @@
-
 /* .body{
     background-image: url(https://i.pinimg.com/originals/e2/97/8c/e2978ca3d3a608d8f3e3dac5c083f3cb.jpg);
     background-size: cover;
@@ -10,15 +9,73 @@
     margin: 100px auto;
     
     }   */
-     
-    .instructions{
-         font-size: large;
-         font-weight: bold;
-<<<<<<< HEAD
-         font-family: 'DM Sans', sans-serif;
-     }
-=======
-         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-     }
+    /* #start-adventure {
+      width: 200px;
+      height: 190px;
+      position: absolute;
+      background: url(/media/images/transparent_button_normal.png.pagespeed.ce._PQuVSQuHh.png) no-repeat;
+  } */
 
->>>>>>> cc6cb6b10de3e8f2f6d11879e27a47c5141f6551
+  .instructions {
+    font-size: large;
+    font-weight: 600;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  .h4 {
+      font-weight: bold
+      font-size: large;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  /* card flip animation section */
+  .card-flip > div {
+    backface-visibility: hidden;
+    transition: transform 300ms;
+    transition-timing-function: linear;
+    width: 240px;
+    height: 240px;
+    margin: 0;
+    display: flex;
+  }
+  
+  #card-front-4,
+  #card-front-3,
+  #card-front-2,
+  #card-front-1 {
+    transform: rotateY(0deg);
+  }
+  
+  #card-back-4,
+  #card-back-3,
+  #card-back-2,
+  #card-back-1 {
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+  }
+  
+  .card-flip:hover #card-front-1 {
+    transform: rotateY(-180deg);
+  }
+  .card-flip:hover #card-front-2 {
+    transform: rotateY(-180deg);
+  }
+  .card-flip:hover #card-front-3 {
+    transform: rotateY(-180deg);
+  }
+  .card-flip:hover #card-front-4 {
+    transform: rotateY(-180deg);
+  }
+  
+  .card-flip:hover #card-back-1 {
+    transform: rotateY(0deg);
+  }
+  .card-flip:hover #card-back-2 {
+    transform: rotateY(0deg);
+  }
+  .card-flip:hover #card-back-3 {
+    transform: rotateY(0deg);
+  }
+  .card-flip:hover #card-back-4 {
+    transform: rotateY(0deg);
+  }

@@ -80,8 +80,8 @@ $(document).ready(function () {
         cardImgEl.attr("src", response[i].image);
         $("#card-front-" + [i + 1]).addClass("card");
         $("#card-back-" + [i + 1]).addClass("card");
-        $("#card-front-" + [i + 1]).attr("style", "height: 15rem;");
-        $("#card-back-" + [i + 1]).attr("style", "height: 15rem;");
+        // $("#card-front-" + [i + 1]).attr("style", "height: 15rem;");
+        // $("#card-back-" + [i + 1]).attr("style", "height: 15rem;");
         $("#card-back-" + [i + 1]).attr(
           "style",
           "font-family: MuseoModerno, cursive;"

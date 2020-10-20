@@ -18,23 +18,21 @@
 #btm-right-gif{
   background-size: cover;
   position: fixed;
-  bottom: 0;
+  top: 0;
   right: 0;
   height: 125px;
   width: 125px;
-  border: 3px solid #73AD21;
-  background-image: url("https://media.tenor.com/images/8e16688229234eaa5ed33f99622034c5/tenor.gif");
+  background-image: url("https://media3.giphy.com/media/psmJf376CrS92Dy5wf/source.gif");
 }
 
 #btm-left-gif{
   background-size: cover;
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   height: 125px;
   width: 125px;
-  border: 3px solid #73AD21;
-  background-image: url("https://media.tenor.com/images/8e16688229234eaa5ed33f99622034c5/tenor.gif");
+  background-image: url("https://media0.giphy.com/media/woPVIVFoEBkuMTM8FF/source.gif");
 }
 
 .instructions {

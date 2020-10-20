@@ -15,6 +15,27 @@
       position: absolute;
       background: url(/media/images/transparent_button_normal.png.pagespeed.ce._PQuVSQuHh.png) no-repeat;
   } */
+#btm-right-gif{
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 125px;
+  width: 125px;
+  border: 3px solid #73AD21;
+  background-image: url("https://media.tenor.com/images/8e16688229234eaa5ed33f99622034c5/tenor.gif");
+}
+
+#btm-left-gif{
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 125px;
+  width: 125px;
+  border: 3px solid #73AD21;
+  background-image: url("https://media.tenor.com/images/8e16688229234eaa5ed33f99622034c5/tenor.gif");
+}
 
 .instructions {
   font-size: large;
@@ -22,57 +43,42 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-/* card flip animation section */
 .card-flip > div {
-  background-color: transparent;
+  backface-visibility: hidden;
+  transition: transform 300ms;
+  transition-timing-function: linear;
   width: 240px;
   height: 240px;
-  perspective: 1000px;
+  margin: 0;
+  display: flex;
 }
-.inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-#card-front-4,
-#card-front-3,
-#card-front-2,
-#card-front-1 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+/*
+flip card
+*/
+.card-flip > div {
   backface-visibility: hidden;
-}
-
-#card-back-4,
-#card-back-3,
-#card-back-2,
-#card-back-1 {
-  position: absolute;
+  transition: transform 300ms;
+  transition-timing-function: linear;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
+  margin: 0;
+  display: flex;
 }
 
-.card-flip:hover .inner {
-  transform: rotateY(-180deg);
+.card-front {
+  transform: rotateY(0deg);
 }
-.card-flip:hover #card-front-2 {
-  transform: rotateY(-180deg);
-}
-.card-flip:hover #card-front-3 {
-  transform: rotateY(-180deg);
-}
-/* .card-flip:hover #card-front-4 {
-  transform: rotateY(-180deg);
-} */
 
-.back {
+.card-back {
   transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+}
+
+.card-flip:hover .card-front {
+  transform: rotateY(-180deg);
+}
+
+.card-flip:hover .card-back {
+  transform: rotateY(0deg);
 }

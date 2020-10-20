@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   // var sunnyAudio = new Audio('screaming-sun-rick-and-morty.mp3');
   // sunnyAudio.play();
@@ -11,12 +10,13 @@ $(document).ready(function () {
     "https://cdn-images-1.medium.com/max/1280/1*BArwiczvwUqxWu9OB1e7Sw.png";
   var imageArr = [
     "https://c4.wallpaperflare.com/wallpaper/588/5/300/rick-and-morty-toilets-hd-wallpaper-thumb.jpg",
-  
+
     "https://wallpapercave.com/wp/wp1822736.jpg",
 
     "https://images6.alphacoders.com/633/thumb-1920-633294.png",
 
-    "https://filmdaily.co/wp-content/uploads/2018/06/rick-and-morty-pluto-1024x475.jpg", "https://images6.alphacoders.com/909/thumb-1920-909641.png",
+    "https://filmdaily.co/wp-content/uploads/2018/06/rick-and-morty-pluto-1024x475.jpg",
+    "https://images6.alphacoders.com/909/thumb-1920-909641.png",
   ];
 
   var myManAudio = new Audio("my-man.mp3");
@@ -50,11 +50,10 @@ $(document).ready(function () {
   });
   // changes background image, cards, refreshes site if button is clicked more than 4 times
   $("#btn-next-world").click(function () {
-
-    // myManAudio.play();
+    // `myManAudio.play();`
     // evilMortyAudio.play();
     clickCount = +clickCount + 1;
-    if (clickCount > 4) {
+    if (clickCount > 5) {
       location.reload();
     }
 
@@ -75,10 +74,12 @@ $(document).ready(function () {
     }).then(function (response) {
       for (let i = 0; i < 4; i++) {
         var cardImgEl = $("<img>");
-        cardImgEl.addClass("card-img-top mx-auto img-thumbnail");
+        cardImgEl.addClass("card-img-top mx-auto img-fluid");
         cardImgEl.attr("src", response[i].image);
-        $("#card-front-" + [i + 1]).addClass("card");
-        $("#card-back-" + [i + 1]).addClass("card");
+        // cardImgEl.attr("height", "200px");
+        // cardImgEl.attr("width", "200px");
+        // $("#card-front-" + [i + 1]).addClass("card");
+        // $("#card-back-" + [i + 1]).addClass("card");
         // $("#card-front-" + [i + 1]).attr("style", "height: 15rem;");
         // $("#card-back-" + [i + 1]).attr("style", "height: 15rem;");
         $("#card-back-" + [i + 1]).attr(
@@ -98,17 +99,18 @@ $(document).ready(function () {
   // grabs 4 random advice
   function getBadAdvice() {
     $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/https://badadvice.rest/api/count=29",
-        method: "GET",
-      }).then(function(response){
-        // sets random advice to cards
-        console.log(response[0]);
-        for (let i = 0; i < 4; i++){
-          $("#card-back-" + [i + 1]).text(response[i]);
-        }
-      });
-} 
-  
+      url:
+        "https://cors-anywhere.herokuapp.com/https://badadvice.rest/api/count=29",
+      method: "GET",
+    }).then(function (response) {
+      // sets random advice to cards
+      console.log(response[0]);
+      for (let i = 0; i < 4; i++) {
+        $("#card-back-" + [i + 1]).text(response[i]);
+      }
+    });
+  }
+
   //   fixed footer styling
   $(".footer").css("position", "fixed");
   $(".footer").css("left", "0");
@@ -148,4 +150,3 @@ $(document).ready(function () {
     $("#game-instructions").empty();
   }
 });
-

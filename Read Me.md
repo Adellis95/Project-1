@@ -15,6 +15,10 @@ Technologies : JavaScript, HTML, CSS, jQuery
 - This is the seventh page of the application, that shows the end of the journey. This page gives the user a story to end the journey and gives the user an option to start the adventure over again. 
 
 
+# Contributors 
+Front End - Tornubari Koboo and Austin ELlis
+Back End -  Claude and Dempsey 
+
 # Screenshot
 
 ![Screenshot](application-screenshot.png)

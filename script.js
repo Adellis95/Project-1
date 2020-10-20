@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
   // var sunnyAudio = new Audio('screaming-sun-rick-and-morty.mp3');
   // sunnyAudio.play();
@@ -32,7 +33,6 @@ $(document).ready(function () {
   $("#character-cards-group").hide();
 
   $("#start-adventure").click(function () {
-    
     // myManAudio.play();
     // evilMortyAudio.play();
     setBgImg(citadelBgImg);
@@ -51,11 +51,10 @@ $(document).ready(function () {
   // changes background image, cards, refreshes site if button is clicked more than 4 times
   $("#btn-next-world").click(function () {
 
-    // `myManAudio.play();`
+    // myManAudio.play();
     // evilMortyAudio.play();
-    clickCount =+ clickCount + 1;
-    if (clickCount > 5){
-
+    clickCount = +clickCount + 1;
+    if (clickCount > 4) {
       location.reload();
     }
 
@@ -149,3 +148,4 @@ $(document).ready(function () {
     $("#game-instructions").empty();
   }
 });
+

@@ -6,6 +6,15 @@ We designed an application based on the Rick and Morty Television show. Once, th
 
 Technologies : JavaScript, HTML, CSS, jQuery
 
+# Table of Contents 
+1. Main Page
+- This is the first page of the application that starts the journey for the user. 
+2. Second Page - Sixth Page
+- Through out these pages are the the various worlds that the user are traveling through. 
+3. End Page/Story Page
+- This is the seventh page of the application, that shows the end of the journey. This page gives the user a story to end the journey and gives the user an option to start the adventure over again. 
+
+
 # Screenshot
 
 ![Screenshot](application-screenshot.png)

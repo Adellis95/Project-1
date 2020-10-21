@@ -15,7 +15,7 @@
       position: absolute;
       background: url(/media/images/transparent_button_normal.png.pagespeed.ce._PQuVSQuHh.png) no-repeat;
   } */
-#btm-right-gif{
+#btm-right-gif {
   background-size: cover;
   position: fixed;
   top: 0;
@@ -25,7 +25,7 @@
   background-image: url("https://media3.giphy.com/media/psmJf376CrS92Dy5wf/source.gif");
 }
 
-#btm-left-gif{
+#btm-left-gif {
   background-size: cover;
   position: fixed;
   top: 0;

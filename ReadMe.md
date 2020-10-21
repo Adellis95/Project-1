@@ -8,6 +8,7 @@ We designed an application based on the Rick and Morty Television show. Once, th
 
 - [Description](#description)
 - [Acceptance_Criteria](#acceptance_criteria)
+- [Installation](#installation)
 - [Technologies](#technologies)
 - [Contributors](#contributors)
 - [Screenshot](#screenshot)
@@ -36,6 +37,14 @@ We designed an application based on the Rick and Morty Television show. Once, th
 
 * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 ```
+
+## Installation
+
+The way to access this project is to go to my GitHub site and to clone my Javascript Quiz repository from here : https://github.com/Adellis95
+
+Then you pull the cloned repository into your terminal/GitBash by using the "git pull (git@github.com:Adellis95/Project-1.git)
+
+Afterwards, you change directories in your terminal until you are in the Project-1 repository and open the file in your code editor by typing "code ."
 
 ## Technologies
 

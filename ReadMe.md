@@ -21,7 +21,7 @@ Technologies : JavaScript, HTML, CSS, jQuery
 
 
 # Contributors 
-- Front End - Tornubari Koboo and Austin ELlis
+- Front End - Tornubari Koboo and Austin Ellis
 - Back End -  Claude and Dempsey 
 
 # Screenshot

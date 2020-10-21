@@ -51,7 +51,7 @@ Afterwards, you change directories in your terminal until you are in the Project
 - JavaScript
 - HTML
 - CSS
-- jQuery
+- JQuery
 
 ## Contributors
 

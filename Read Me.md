@@ -14,7 +14,10 @@ Technologies : JavaScript, HTML, CSS, jQuery
 - Through out these pages are the the various worlds that the user are traveling through. 
 - On these pages are different character cards that have advice on the back of their card. 
 3. End Page/Story Page
-- This is the seventh page of the application, that shows the end of the journey. This page gives the user a story to end the journey and gives the user an option to start the adventure over again. 
+- This is the end page of the application, it shows the end of the journey. 
+- This page gives the user a story to end the journey 
+- This page gives the user an option to start the adventure over again. 
+
 
 
 # Contributors 

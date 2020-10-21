@@ -40,7 +40,9 @@ We designed an application based on the Rick and Morty Television show. Once, th
 
 ## Installation
 
-The way to access this project is to go to my GitHub site and to clone my Javascript Quiz repository from here : https://github.com/Adellis95
+You can access the application by following this link: https://adellis95.github.io/Project-1/
+
+Or go to my GitHub page and clone my Project-1 repository from here : https://github.com/Adellis95
 
 Then you pull the cloned repository into your terminal/GitBash by using the "git pull (git@github.com:Adellis95/Project-1.git)
 
@@ -52,10 +54,14 @@ Afterwards, you change directories in your terminal until you are in the Project
 - HTML
 - CSS
 - JQuery
+- Rick and Morty API: https://rickandmortyapi.com/documentation
+- Bad Advice Rest API: https://badadvice.rest/
+- Rick and Morty Soundboard: https://www.101soundboards.com/boards/21656-rick-and-morty-soundboard
 
 ## Contributors
 
 Front End - Tornubari Koboo and Austin Ellis
+
 Back End - Claude and Dempsey
 
 ## Screenshot

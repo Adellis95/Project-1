@@ -15,7 +15,13 @@
       position: absolute;
       background: url(/media/images/transparent_button_normal.png.pagespeed.ce._PQuVSQuHh.png) no-repeat;
   } */
-#btm-right-gif {
+
+.card{
+  box-shadow: 0 20px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#btm-right-gif{
+
   background-size: cover;
   position: fixed;
   top: 0;

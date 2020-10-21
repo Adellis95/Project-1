@@ -1,32 +1,66 @@
-# Read Me
-
 # Rick and Morty Adventure
+
+## Description
 
 We designed an application based on the Rick and Morty Television show. Once, the user clicks the start journey button on the website, the user is sent on journey to various worlds, where they are offered different life advice. In these different worlds there are various characters who have different advice on their cards. When the user flips the card, the advice from that character will be given to them. To pull the tip that will be displayed to the user, we used an API. The user is in for an adventure like no other!
 
-Technologies : JavaScript, HTML, CSS, jQuery
+## Table of Contents
 
-# Table of Contents 
-1. Main Page
-- This is the first page of the application 
-- This page allows the user to start the journey by clicking the button.  
-2. Second Page - Sixth Page
-- Through out these pages are the the various worlds that the user are traveling through. 
-- On these pages are different character cards that have advice on the back of their card. 
-3. End Page/Story Page
-- This is the end page of the application, it shows the end of the journey. 
-- This page gives the user a story to end the journey 
-- This page gives the user an option to start the adventure over again. 
+- [Description](#description)
+- [Acceptance_Criteria](#acceptance_criteria)
+- [Technologies](#technologies)
+- [Contributors](#contributors)
+- [Screenshot](#screenshot)
+- [License](#license)
 
+## Acceptance Criteria
 
+```
+* Use a CSS framework other than Bootstrap.
 
-# Contributors 
-- Front End - Tornubari Koboo and Austin Ellis
-- Back End -  Claude and Dempsey 
+* Be deployed to GitHub Pages.
 
-# Screenshot
+* Be interactive (i.e., accept and respond to user input).
+
+* Use at least two server-side APIs.
+
+* Does not use alerts, confirms, or prompts (use modals).
+
+* Use client-side storage to store persistent data.
+
+* Be responsive.
+
+* Have a polished UI.
+
+* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+
+* Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+```
+
+## Technologies
+
+- JavaScript
+- HTML
+- CSS
+- jQuery
+
+## Contributors
+
+Front End - Tornubari Koboo and Austin Ellis
+Back End - Claude and Dempsey
+
+## Screenshot
 
 ![Screenshot](application-screenshot.png)
+![Screenshot](Second-Page.png)
+![Screenshot](Third-Page.png)
+![Screenshot](Fourth-Page.png)
+![Screenshot](Fifth-Page.png)
+![Screenshot](Sixth-Page.png)
+![Screenshot](Seventh-Page.png)
+![Screenshot](End-Page.png)
+
+## License
 
 The MIT License
 
